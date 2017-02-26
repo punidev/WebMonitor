@@ -12,7 +12,7 @@ namespace WebMonitoring.Services
         {
             CronTab.Start("http://google.com", x => x.WithIntervalInMinutes(2).RepeatForever(), id: 1);
             CronTab.Start("http://apple.com", x => x.WithIntervalInMinutes(5).RepeatForever(), id: 2);
-            CronTab.Start("http://microsoft.com", x => x.WithIntervalInHours(48).RepeatForever(), true, 3);
+            CronTab.Start("http://microsoft.com", isCurrentDate: true, id: 3);
         }
 
         protected override void OnStop()

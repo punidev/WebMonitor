@@ -9,7 +9,7 @@ namespace WebMonitoring.Services
     {
         public static void Start(
             string itemId,
-            Action<SimpleScheduleBuilder> func, 
+            Action<SimpleScheduleBuilder> func = null, 
             bool isCurrentDate = false,
             int id = 0)
         {

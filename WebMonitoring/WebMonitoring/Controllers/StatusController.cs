@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
-namespace WebMonitoring
+namespace WebMonitoring.Controllers
 {
     public class StatusController : ApiController
     {
         [HttpGet]
-        public bool CheckStatus(HttpStatusCode code)
+        public bool CheckStatus()
         {
-            return code == HttpStatusCode.OK;
+            return Headers().Any();
         }
+
         [HttpGet]
         public IEnumerable<string> Headers()
         {

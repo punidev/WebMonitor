@@ -1,31 +1,34 @@
 ﻿using System;
 using Quartz;
 using Quartz.Impl;
-namespace WebMonitoring
+using WebMonitoring.PingStore;
+
+namespace WebMonitoring.Services
 {
-    class CronTab
+    public class CronTab
     {
-        public static void Start<T>(Action<SimpleScheduleBuilder> func, bool isCurrentDate = false) 
-            where T : IJob
+        public static void Start(
+            string itemId,
+            Action<SimpleScheduleBuilder> func, 
+            bool isCurrentDate = false,
+            int id = 0)
         {
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
             scheduler.Start();
-            IJobDetail job = JobBuilder.Create<T>().Build();
-            DateTime localTime = new DateTime(2017, 02, 26, 22, 15, 00);
+            IJobDetail job = JobBuilder.Create<PingLogger>().UsingJobData("itemId", itemId).Build();
+
             ITrigger trigger;
             if (isCurrentDate)
             {
                 trigger = TriggerBuilder.Create() 
-                .WithIdentity("trigger1", "group1") 
-                .StartNow()
-                .WithSimpleSchedule(func)
-                .StartAt(new DateTimeOffset(localTime, TimeZoneInfo.Local.GetUtcOffset(localTime)))
+                .WithIdentity(string.Concat("trigger_", id), "group1")
+                .WithCronSchedule("0 15 22 ? * */2 *")
                 .Build();
             }
             else
             {
                 trigger = TriggerBuilder.Create()
-                .WithIdentity("trigger1", "group1")
+                .WithIdentity(string.Concat("trigger_", id), "group1")
                 .StartNow()
                 .WithSimpleSchedule(func)
                 .Build();

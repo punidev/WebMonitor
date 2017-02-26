@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net.Http;
-using System.ServiceProcess;
 using Microsoft.Owin.Hosting;
+using WebMonitoring.RouteData;
+using WebMonitoring.Services;
 
 namespace WebMonitoring
 {
@@ -14,12 +15,9 @@ namespace WebMonitoring
             WebApp.Start<Startup>(baseAddress);
             HttpClient client = new HttpClient();
 
-            var headers = client.GetAsync($"{baseAddress}/api/status/Headers").Result;
+            var headers = client.GetAsync($"{baseAddress}/api/status/CheckStatus").Result;
             Console.WriteLine(headers);
             Console.WriteLine(headers.Content.ReadAsStringAsync().Result);
-
-            var response = client.GetAsync($"{baseAddress}/api/status/CheckStatus?code={headers.StatusCode}").Result;
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
             try
             {
                 CommandLineArgumentProcessor.Run(args);

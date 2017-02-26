@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Net;
 
-namespace WebMonitoring
+namespace WebMonitoring.PingStore
 {
-    internal class HttPingScheduleItem
+    public class HttPingScheduleItem
     {
         public PingTimedData Execute(string url)
         {

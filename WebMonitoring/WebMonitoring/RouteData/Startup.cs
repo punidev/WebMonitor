@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using Owin;
 
-namespace WebMonitoring
+namespace WebMonitoring.RouteData
 {
     public class Startup
     {

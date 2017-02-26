@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 
-namespace WebMonitoring
+namespace WebMonitoring.Services
 {
     public static class CommandLineArgumentProcessor
     {

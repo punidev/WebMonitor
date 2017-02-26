@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMonitoring", "WebMonitoring\WebMonitoring.csproj", "{744AAE0D-D6E0-432E-863C-752FF07374D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMonitory.UTest", "WebMonitory.UTest\WebMonitory.UTest.csproj", "{0EFEA2D7-D339-43DA-B3B5-0BF6EBCB6F3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{744AAE0D-D6E0-432E-863C-752FF07374D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{744AAE0D-D6E0-432E-863C-752FF07374D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{744AAE0D-D6E0-432E-863C-752FF07374D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFEA2D7-D339-43DA-B3B5-0BF6EBCB6F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFEA2D7-D339-43DA-B3B5-0BF6EBCB6F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFEA2D7-D339-43DA-B3B5-0BF6EBCB6F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFEA2D7-D339-43DA-B3B5-0BF6EBCB6F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

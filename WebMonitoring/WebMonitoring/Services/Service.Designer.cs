@@ -1,4 +1,4 @@
-﻿namespace WebMonitoring
+﻿namespace WebMonitoring.Services
 {
     partial class Service
     {

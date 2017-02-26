@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
-namespace WebMonitoring
+namespace WebMonitoring.PingStore
 {
-    class PingTimedData
+    public class PingTimedData
     {
-        public static List<PingTimedData> Items = new List<PingTimedData>();
         public bool IsAccessible { get; set; }
         public DateTimeOffset MeasurmentTaken { get; set; }
         public double Latency { get; set; }
